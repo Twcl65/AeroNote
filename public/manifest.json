@@ -1,0 +1,28 @@
+{
+    "short_name": "AeroNote",
+    "name": "AeroNote - Smart Note Taking",
+    "description": "Clean, lightweight, and distraction-free notepad application",
+    "icons": [
+        {
+            "src": "favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "logo.svg",
+            "type": "image/svg+xml",
+            "sizes": "512x512"
+        }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#0ea5e9",
+    "background_color": "#ffffff",
+    "orientation": "portrait-primary",
+    "categories": [
+        "productivity",
+        "utilities"
+    ],
+    "lang": "en"
+}

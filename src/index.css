@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Debug styles to verify CSS is working */
+.debug-css {
+    background-color: red !important;
+    color: white !important;
+    padding: 20px !important;
+    margin: 20px !important;
+    border: 5px solid blue !important;
+    font-size: 24px !important;
+    font-weight: bold !important;
+}
+
+/* Test class to verify Tailwind is working */
+.test-tailwind {
+    @apply bg-blue-500 text-white p-4 rounded;
+}
+
+@layer base {
+    html {
+        font-family: 'Inter', system-ui, sans-serif;
+    }
+
+    body {
+        @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    * {
+        @apply border-gray-200 dark:border-gray-700;
+    }
+}
+
+@layer components {
+    .btn {
+        @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+    }
+
+    .btn-primary {
+        @apply btn bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500;
+    }
+
+    .btn-secondary {
+        @apply btn bg-gray-200 text-gray-700 hover:bg-gray-300 focus:ring-gray-500 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600;
+    }
+
+    .btn-ghost {
+        @apply btn text-gray-600 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-200;
+    }
+
+    .card {
+        @apply bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700;
+    }
+
+    .input {
+        @apply w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+    }
+
+    .sidebar-item {
+        @apply flex items-center px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-200;
+    }
+
+    .sidebar-item.active {
+        @apply bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300;
+    }
+}
+
+@layer utilities {
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+
+    .text-balance {
+        text-wrap: balance;
+    }
+
+    /* Custom line-clamp utilities */
+    .line-clamp-1 {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+    }
+    
+    .line-clamp-2 {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+    }
+    
+    .line-clamp-3 {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+    }
+}
+
+/* TipTap Editor Styles */
+.ProseMirror {
+    @apply outline-none min-h-[200px] p-4;
+}
+
+.ProseMirror p.is-editor-empty:first-child::before {
+    @apply text-gray-400 dark:text-gray-500;
+    content: attr(data-placeholder);
+    float: left;
+    height: 0;
+    pointer-events: none;
+}
+
+.ProseMirror h1 {
+    @apply text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4;
+}
+
+.ProseMirror h2 {
+    @apply text-xl font-semibold text-gray-800 dark:text-gray-200 mb-3;
+}
+
+.ProseMirror h3 {
+    @apply text-lg font-medium text-gray-700 dark:text-gray-300 mb-2;
+}
+
+.ProseMirror ul,
+.ProseMirror ol {
+    @apply my-4 ml-6;
+}
+
+.ProseMirror li {
+    @apply my-2;
+}
+
+.ProseMirror blockquote {
+    @apply border-l-4 border-gray-300 dark:border-gray-600 pl-4 italic text-gray-700 dark:text-gray-300 my-4;
+}
+
+.ProseMirror code {
+    @apply bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-2 py-1 rounded text-sm font-mono;
+}
+
+.ProseMirror pre {
+    @apply bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-4 rounded-lg overflow-x-auto my-4;
+}
+
+.ProseMirror pre code {
+    @apply bg-transparent p-0 text-inherit;
+}
+
+.ProseMirror mark {
+    @apply bg-yellow-200 dark:bg-yellow-800 text-gray-900 dark:text-gray-100 px-1 rounded;
+}
+
+.ProseMirror ul[data-type="taskList"] {
+    @apply list-none p-0;
+}
+
+.ProseMirror ul[data-type="taskList"] li {
+    @apply flex items-start gap-2;
+}
+
+.ProseMirror ul[data-type="taskList"] li > label {
+    @apply flex items-center gap-2 cursor-pointer;
+}
+
+.ProseMirror ul[data-type="taskList"] li > label > input[type="checkbox"] {
+    @apply w-4 h-4 text-primary-600 bg-gray-100 border-gray-300 rounded focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600;
+}
+
+.ProseMirror ul[data-type="taskList"] li > div {
+    @apply flex-1;
+}
+
+.ProseMirror ul[data-type="taskList"] li > div > p {
+    margin: 0;
+}
